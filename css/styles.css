@@ -1,0 +1,282 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Merriweather", serif;
+	margin: 0 auto;
+}
+
+header,
+footer {
+	text-align: center;
+}
+
+
+
+h1 {
+	text-transform: uppercase;
+	background-color: #262626;	
+	color: white;
+	margin-top: 0;
+	font-size: 1.5em;
+	padding: 20px 10px;
+}
+
+h2 {
+	font-size: 1.25em;
+}
+
+
+form {
+	border-top: 1px solid black;
+  margin: 2px 5px 0 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+textarea {
+    height: 136px;
+    background-color:  #fff;
+  }
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+  transition-property: border;
+  transition-duration: .2s;
+  transition-delay: .1s;
+  border: 2px solid #006699;
+}
+
+
+
+
+p,
+label {
+	color: #948b76;
+}
+
+
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #006699;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #006699;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+}
+
+fieldset {
+	margin-bottom: 30px;
+	border: none;
+}
+
+legend {
+	font-size: 1.4em;
+  	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+textarea {
+	resize: none;
+	margin-top: 20px;
+}
+
+footer {
+	font-style: italic;
+}
+
+/*----Class features----*/
+.contact {
+	padding-top: 10px;
+	border-bottom: 1px solid black;
+}
+
+.intro {
+  border-bottom: 2px solid black;
+  margin:0 5px 5px 5px;
+  padding: 10px;
+}
+
+.newsletter {
+  background-color: #f2f2f2;
+}
+
+.newsletter p,
+.newsletter label {
+  color: black;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+    font-size: 13px;
+   /* user-select: none;*/
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    border: 1px solid #948b76;
+    border-radius: 30%;
+}
+
+/* Create a custom radio button */
+.radio_check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    border: 1px solid #948b76;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark,
+.container:hover input ~ .radio_check {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark,
+.container input:checked ~ .radio_check {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after,
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio_check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after,
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .radio_check:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 4px;
+    top: 2px;
+    width: 2px;
+    height: 5px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+
+
+/* Style the indicator (dot/circle) */
+.container .radio_check:after {
+  top: 4.5px;
+  left: 4.5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: white;
+}
+
+/*----ID features----*/
+#zip {
+	width: 150px;
+}
+
+#plain,
+#js_news {
+	margin-bottom: 30px;
+}
+
+
+
+/* Media Query*/
+@media (min-width: 320px){
+  label.info {
+  display: block;
+  margin-bottom: 8px;
+  }
+  
+}
+
+@media (min-width: 768px){
+  .main-content,
+  .intro {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .input_field {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    flex-basis: 75%;
+  }
+
+  .zip {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  input[type="number"]{
+    margin-left: 123px;
+  }
+
+}
+
+/*TODO
+  checkbox and radio
+*/
